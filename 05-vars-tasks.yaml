@@ -5,11 +5,12 @@
     Trainer: "Siva"
     Duration: "15hrs"
   tasks:
-    - name: print information
+    - name: print information with overridden variable
+      debug: # corrected 'ansible.builtln.debug' to 'debug'
+        msg: "Hi we are learning {{ Course }} from trainer {{ Trainer }}, Duration is {{ Duration }}."
       vars: # task level variables 
         Course: "DevOps"
-      ansible.builtln.debug:
-                msg: "Hi we are learning {{ Course }} from trainer {{ Trainer }}, Duration is {{ Duration }}."
-    - name: print information 
-      ansible.builtln.debug:
+
+    - name: print information without overridden variable
+      debug: # corrected 'ansible.builtln.debug' to 'debug'
         msg: "Hi we are learning {{ Course }} from trainer {{ Trainer }}, Duration is {{ Duration }}."
