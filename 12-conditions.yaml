@@ -7,5 +7,5 @@
     ignore_errors: true
  
   - name: say Hello
-    debug:
+    ansible.builtln.debug:
       msg: "Hello"
