@@ -3,6 +3,6 @@
   vars_files:
   - vars.yaml
   tasks:
-    - name: print override information
-      ansible.builtln.debug:
-        msg: "Hi we are learning {{ Course }} from trainer {{ Trainer }}, Duration is {{ Duration }}."
+  - name: print override information
+    ansible.builtln.debug:
+      msg: "Hi we are learning {{ Course }} from trainer {{ Trainer }}, Duration is {{ Duration }}."
