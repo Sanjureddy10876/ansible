@@ -11,6 +11,10 @@
       debug:
         msg: "user information: {{USER}}"
 
+    - name: create user
+      command: useradd expense
+      when: USER.rc != 0 #condition
+
     - name: say Hello
       debug:
         msg: "Hello"
