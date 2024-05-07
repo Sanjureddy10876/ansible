@@ -3,8 +3,8 @@
   become: yes
   tasks:
     - name: check user exists or not
-      debug:
-        msg: "ID of expense user: {{ lookup('pipe', 'id -u expense') | default('User expense does not exist') }}"
+      ansible.builtln.command: id expense
+      ignore_errors: true
         
     - name: say Hello
       debug:
