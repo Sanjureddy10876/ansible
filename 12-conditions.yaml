@@ -2,10 +2,10 @@
   hosts: web
   become: yes
   tasks:
-  - name: check user exists or not
-    ansible.builtln.command: id expense
-    ignore_errors: true
- 
-  - name: say Hello
-    ansible.builtln.debug:
-      msg: "Hello"
+    - name: check user exists or not
+      command: id expense
+      ignore_errors: yes
+
+    - name: say Hello
+      debug:
+        msg: "Hello"
