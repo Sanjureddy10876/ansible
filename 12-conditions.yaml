@@ -4,7 +4,12 @@
   tasks:
     - name: check user exists or not
       command: id expense
+      register: USER
       ignore_errors: yes
+
+    - name: print user information
+      debug:
+        msg: "user information: {{USER}}"
 
     - name: say Hello
       debug:
