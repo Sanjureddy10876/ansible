@@ -1,7 +1,6 @@
 - name: variables preference
   hosts: localhost
   vars:
-  # 1. Declare a variable
     WISHES: "Morning from PLAY variable"
   vars_files:
   - vars.yaml
@@ -11,7 +10,11 @@
       private: false
   tasks:
     - name: check preference
-      vars:
-        WISHES: "Morning from TASK variable"
+#      vars:
+#       WISHES: "Morning from TASK variable"
       debug:
         msg: "Hello, Good {{WISHES}}"
+
+
+# 1. arguments
+# 2. Task
