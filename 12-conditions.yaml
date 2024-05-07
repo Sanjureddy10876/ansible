@@ -3,8 +3,9 @@
   become: yes
   tasks:
     - name: check user exists or not
-      debug: id expense
-
+      debug:
+        msg: "ID of expense user: {{ lookup('pipe', 'id -u expense') | default('User expense does not exist') }}"
+        
     - name: say Hello
       debug:
         msg: "Hello"
