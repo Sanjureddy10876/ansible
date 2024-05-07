@@ -1,0 +1,10 @@
+- name: Conditions
+  hosts: web
+  become: yes
+  tasks:
+    - name: check user exists or not
+      debug: id expense
+
+    - name: say Hello
+      debug:
+        msg: "Hello"
