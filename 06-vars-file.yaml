@@ -4,5 +4,5 @@
     - vars.yaml
   tasks:
     - name: print override information
-      ansible.builtln.debug:
+      debug: # corrected 'ansible.builtln.debug' to 'debug'
         msg: "Hi we are learning {{ Course }} from trainer {{ Trainer }}, Duration is {{ Duration }}."
