@@ -3,4 +3,13 @@
   tasks:
     - name: print default value
       debug:
-        msg: "Hello {{course}}"
+        msg: "Hello {{course | default(`Ansible`) }}"
+
+- name: upper case
+  hosts: localhost
+  vars:
+    greetings: "Hello, Good Morning"
+  tasks:
+  - name: convert into uppercase
+  debug:
+      msg: "{{ greetings | upper }}"
