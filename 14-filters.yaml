@@ -14,3 +14,13 @@
     - name: convert into uppercase
       debug:
         msg: "{{ greetings | upper }}"
+
+
+- name: lower case
+  hosts: localhost
+  vars:
+    greetings: "Hello, Good Morning"
+  tasks:
+    - name: convert into uppercase
+      debug:
+        msg: "{{ greetings | lower }}"
