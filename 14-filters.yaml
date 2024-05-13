@@ -24,3 +24,12 @@
     - name: convert into uppercase
       debug:
         msg: "{{ greetings | lower }}"
+
+
+- name: remove duplicates
+  hosts: localhost
+  numbers: [1, 2, 3, 4, 4, 5]
+  tasks:
+    - name: convert into uppercase
+      debug:
+        msg: "{{ greetings | unique }}"
