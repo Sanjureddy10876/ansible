@@ -31,9 +31,10 @@
   vars:
     numbers: [1, 2, 3, 4, 4, 5]
   tasks:
-  - name: convert into uppercase
-    debug:
-      msg: "{{ greetings | unique }}"
+    - name: remove duplicates from numbers list
+      debug:
+        msg: "{{ numbers | unique }}"
+
 
 - name: print min and max
   hosts: localhost
