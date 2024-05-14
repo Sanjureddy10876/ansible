@@ -44,3 +44,18 @@
   - name: print min and max
     debug:
       msg: "min ages: {{ ages | min }}, max age: {{ ages | max }}"
+
+- name: convert dictionary into items/list
+  hosts: localhost
+  vars:
+    my_dict: #this is called as ditionary or map or key/value paris.
+      Course: Ansible
+      Trainer: Shivakumar
+      Duration: 120hrs
+  tasks:
+  - name: before convert
+    debug: 
+      msg: "Before convert: {{ my_dict }}"
+  - name: after convert
+    debug:
+      msg: "After convert: {{ my_dict | dict2items }}"
