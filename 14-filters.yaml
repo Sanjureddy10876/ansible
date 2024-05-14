@@ -28,8 +28,18 @@
 
 - name: remove duplicates
   hosts: localhost
-  numbers: [1, 2, 3, 4, 4, 5]
+  vars:
+    numbers: [1, 2, 3, 4, 4, 5]
   tasks:
-    - name: convert into uppercase
-      debug:
-        msg: "{{ greetings | unique }}"
+  - name: convert into uppercase
+    debug:
+      msg: "{{ greetings | unique }}"
+
+- name: print min and max
+  hosts: localhost
+  vars:
+    ages: [25, 35, 67, 89]
+  tasks:
+  - name: print min and max
+    debug:
+      msg: "min ages: {{ ages | min }}, max age: {{ ages | max }}"
