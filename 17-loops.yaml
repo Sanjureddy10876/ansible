@@ -4,9 +4,9 @@
   tasks:
     - name: install packages
       ansible.builtin.dnf:
-        name: "{{ item }}"
+        name: "{{ item.name }}"
         state: "{{ item.state }}"
       loop:
-      - { name: 'mysql', state: 'latest'} #item
-      - { name: 'nginx', state: 'absent'}
-      - { name: 'postfix', state: 'absent'}
+        - { name: 'mysql', state: 'latest'}   # Install or ensure MySQL is up-to-date
+        - { name: 'nginx', state: 'absent'}   # Remove nginx if it's installed
+        - { name: 'postfix', state: 'absent'} # Remove postfix if it's installed
